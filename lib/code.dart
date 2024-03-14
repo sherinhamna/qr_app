@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:qr_flutter/qr_flutter.dart';
+import 'package:qr_app/view.dart';
+
 class Qr extends StatefulWidget {
   const Qr({Key? key}) : super(key: key);
 
@@ -21,16 +24,29 @@ class _QrState extends State<Qr> {
               radius: 50,
               child: Icon(Icons.person,size: 50,),
             ),
-            SizedBox(height: 25,),
-            ElevatedButton(onPressed: (){}, child: Text('scan',style: TextStyle(color: Colors.white),),
-              style: ElevatedButton.styleFrom(
-                primary: Colors.cyan,
-                fixedSize: Size(100, 40),
-                side: BorderSide(width: 3.0,color: Colors.white),
-              )
+
+            SizedBox(height: 70,width: 50,),
+            QrImageView(
+              data: '1234567890',
+              version: QrVersions.auto,
+              size: 200.0,
             ),
+            SizedBox(height: 25,),
+            ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ViewImg(),));
+            },
+                child: Text('scan',style: TextStyle(color: Colors.white),),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.cyan,
+                  fixedSize: Size(100, 40),
+                  side: BorderSide(width: 3.0,color: Colors.white),
+                )
+            ),
+
           ],
+
         ),
+
         ),
       ),
     );

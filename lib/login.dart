@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qr_app/code.dart';
+import 'package:qr_app/profile.dart';
+import 'package:qr_app/registration.dart';
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
 
@@ -10,8 +12,7 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
           backgroundColor: Colors.cyan,
           body: Padding(
             padding: const EdgeInsets.only(right: 180,left: 60),
@@ -52,12 +53,25 @@ class _LoginState extends State<Login> {
                   },
                   child: const Text('LOGIN',),
                 ),
+                TextButton(
+                  style: TextButton.styleFrom(
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.only(left: 26,right: 26),
+                    textStyle: const TextStyle(fontSize: 28),
+                  ),
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Reg()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Pro(),));
+                  },
+                  child: const Text('dont have an account',style: TextStyle(color: Colors.white,fontSize: 20),),
+                ),
+
 
 
               ],
             ),
           )
-      ),
+
     );
   }
 }

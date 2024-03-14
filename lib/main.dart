@@ -4,5 +4,5 @@ import 'package:qr_app/registration.dart';
 
 
 void main() {
-  runApp(Reg());
+  runApp(MaterialApp(home: Login()));
 }
