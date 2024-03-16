@@ -49,7 +49,9 @@ class _LoginState extends State<Login> {
                     textStyle: const TextStyle(fontSize: 28),
                   ),
                   onPressed: () {
+
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>Qr()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) =>Pro(),));
                   },
                   child: const Text('LOGIN',),
                 ),
@@ -61,7 +63,7 @@ class _LoginState extends State<Login> {
                   ),
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>Reg()));
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => Pro(),));
+
                   },
                   child: const Text('dont have an account',style: TextStyle(color: Colors.white,fontSize: 20),),
                 ),
